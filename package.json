@@ -1,0 +1,17 @@
+{
+  "name": "com.unity.ui.tools",
+  "version": "0.0.1",
+  "displayName": "LanHuUITool",
+  "description": "This is an LanHu UI tool for Unity create UI prefab package",
+  "unity": "2020.3.12",
+  "unityRelease": "f1c1",
+  "keywords": [
+    "LanHu",
+    "UITool"
+  ],
+  "author": {
+    "name": "jack.fang",
+    "email": "fdx972214@163.com",
+    "url": "https://github.com/JackFang"
+  }
+}

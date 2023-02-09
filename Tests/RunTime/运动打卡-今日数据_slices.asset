@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58e4737bd2f1cf4dbb75e8d84f6e178, type: 3}
+  m_Name: "\u8FD0\u52A8\u6253\u5361-\u4ECA\u65E5\u6570\u636E_slices"
+  m_EditorClassIdentifier: 
+  path: "Assets/Tests/RunTime/\u8FD0\u52A8\u6253\u5361-\u4ECA\u65E5\u6570\u636E_slices"
+  elements:
+  - name: "\u77E9\u5F62(4)"
+    x: 899px
+    y: 345px
+    width: 1200px
+    height: 600px
+    opacity: "\r100%\n            100%\r\n          "
+    pixel: x1
+  - name: "\u4ECA\u65E5\u6570\u636E"
+    x: 949px
+    y: 369px
+    width: 112px
+    height: 40px
+    opacity: 100%
+    pixel: x1
+  - name: "\u77E9\u5F62"
+    x: 949px
+    y: 435px
+    width: 120px
+    height: 46px
+    opacity: 6%
+    pixel: x1
+  - name: "\u77E9\u5F62"
+    x: 1085px
+    y: 435px
+    width: 120px
+    height: 46px
+    opacity: 10%
+    pixel: x1
+  - name: "\u77E9\u5F62"
+    x: 1221px
+    y: 435px
+    width: 120px
+    height: 46px
+    opacity: 100%
+    pixel: x1
+  - name: "\u77E9\u5F62"
+    x: 949px
+    y: 505px
+    width: 611px
+    height: 400px
+    opacity: 100%
+    pixel: x1
