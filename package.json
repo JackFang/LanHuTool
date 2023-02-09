@@ -9,6 +9,13 @@
     "LanHu",
     "UITool"
   ],
+  "samples": [
+    {
+      "displayName": "LanHu Sample",
+      "description": "example scene ui create by tools.",
+      "path": "Samples~/LanHuScene"
+    }
+  ],
   "author": {
     "name": "jack.fang",
     "email": "fdx972214@163.com",
