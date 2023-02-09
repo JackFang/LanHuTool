@@ -1,4 +1,4 @@
-using System.IO;
+ï»¿using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace UnityEngine.UI.Tools
 {
     /// <summary>
-    /// À¶ºşUI½çÃæ´î½¨¹¤¾ß
+    /// è“æ¹–UIç•Œé¢æ­å»ºå·¥å…·
     /// </summary>
     public class LanHuTool : EditorWindow
     {
@@ -40,12 +40,12 @@ namespace UnityEngine.UI.Tools
         private void OnTopGUI()
         {
             GUILayout.BeginHorizontal();
-            GUILayout.Label("ÇĞÍ¼ÎÄ¼ş¼ĞÂ·¾¶£º", GUILayout.Width(100f));
+            GUILayout.Label("åˆ‡å›¾æ–‡ä»¶å¤¹è·¯å¾„ï¼š", GUILayout.Width(100f));
             EditorGUILayout.TextField(path);
-            if (GUILayout.Button("ä¯ÀÀ", GUILayout.Width(40f)))
+            if (GUILayout.Button("æµè§ˆ", GUILayout.Width(40f)))
             {
-                //AssetsÏà¶ÔÂ·¾¶
-                path = EditorUtility.OpenFolderPanel("Ñ¡ÔñÇĞÍ¼ÎÄ¼ş¼Ğ", "", "").Replace(Application.dataPath, "Assets");
+                //Assetsç›¸å¯¹è·¯å¾„
+                path = EditorUtility.OpenFolderPanel("é€‰æ‹©åˆ‡å›¾æ–‡ä»¶å¤¹", "", "").Replace(Application.dataPath, "Assets");
             }
             GUILayout.EndHorizontal();
 
@@ -54,7 +54,7 @@ namespace UnityEngine.UI.Tools
             canvasScaler = (CanvasScaler)EditorGUILayout.ObjectField(canvasScaler, typeof(CanvasScaler), true);
             if (canvasScaler == null)
             {
-                if (GUILayout.Button("´´½¨", GUILayout.Width(40f)))
+                if (GUILayout.Button("åˆ›å»º", GUILayout.Width(40f)))
                 {
                     var canvas = new GameObject("Canvas").AddComponent<Canvas>();
                     canvas.renderMode = RenderMode.ScreenSpaceCamera;
@@ -88,9 +88,9 @@ namespace UnityEngine.UI.Tools
                 GUILayout.BeginVertical("Box");
 
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("Í¼²ã", GUILayout.Width(labelWidth));
+                GUILayout.Label("å›¾å±‚", GUILayout.Width(labelWidth));
                 element.name = EditorGUILayout.TextField(element.name);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
                     element.name = GUIUtility.systemCopyBuffer;
                 }
@@ -103,50 +103,74 @@ namespace UnityEngine.UI.Tools
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("Î»ÖÃ", GUILayout.Width(labelWidth));
+                GUILayout.Label("ä½ç½®", GUILayout.Width(labelWidth));
                 element.x = EditorGUILayout.TextField(element.x);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
                     element.x = GUIUtility.systemCopyBuffer;
                 }
                 element.y = EditorGUILayout.TextField(element.y);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
                     element.y = GUIUtility.systemCopyBuffer;
                 }
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("´óĞ¡", GUILayout.Width(labelWidth));
+                GUILayout.Label("å¤§å°", GUILayout.Width(labelWidth));
                 element.width = EditorGUILayout.TextField(element.width);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
                     element.width = GUIUtility.systemCopyBuffer;
                 }
                 element.height = EditorGUILayout.TextField(element.height);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
                     element.height = GUIUtility.systemCopyBuffer;
                 }
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("²»Í¸Ã÷¶È", GUILayout.Width(labelWidth));
+                GUILayout.Label("ä¸é€æ˜åº¦", GUILayout.Width(labelWidth));
                 element.opacity = EditorGUILayout.TextField(element.opacity);
-                if (GUILayout.Button("Õ³Ìù", GUILayout.Width(40f)))
+                if (GUILayout.Button("ç²˜è´´", GUILayout.Width(40f)))
                 {
-                    element.opacity = GUIUtility.systemCopyBuffer;
+                    element.opacity = GUIUtility.systemCopyBuffer?.Trim();
                 }
                 GUILayout.EndHorizontal();
 
                 GUILayout.BeginHorizontal();
-                GUILayout.Label("ÏñËØ±¶Êı", GUILayout.Width(labelWidth));
+                GUILayout.Label("åƒç´ å€æ•°", GUILayout.Width(labelWidth));
                 if (GUILayout.Button(element.pixel))
                 {
                     GenericMenu gm = new GenericMenu();
                     gm.AddItem(new GUIContent("x1"), element.pixel == "x1", () => element.pixel = "x1");
                     gm.AddItem(new GUIContent("x2"), element.pixel == "x2", () => element.pixel = "x2");
                     gm.ShowAsContext();
+                }
+                GUILayout.EndHorizontal();
+
+                GUILayout.BeginHorizontal();
+                GUILayout.Label("è°ƒæ•´å±‚çº§", GUILayout.Width(labelWidth));
+                if (GUILayout.Button("ä¸Šç§»", GUILayout.Width(40f)))
+                {
+                    if(i>0)
+                    {
+                        LanHuViewElement prevElement = elements[i-1];
+                        elements[i - 1] = elements[i];
+                        elements[i] = prevElement;
+                    }
+                    Repaint();
+                }
+                if (GUILayout.Button("ä¸‹ç§»", GUILayout.Width(40f)))
+                {
+                    if(i<elements.Count-1)
+                    {
+                        LanHuViewElement nextElement = elements[i + 1];
+                        elements[i + 1] = elements[i];
+                        elements[i] = nextElement;
+                    }
+                    Repaint();
                 }
                 GUILayout.EndHorizontal();
 
@@ -158,9 +182,9 @@ namespace UnityEngine.UI.Tools
         {
             GUILayout.FlexibleSpace();
             GUILayout.BeginHorizontal();
-            if (GUILayout.Button("µ¼Èë", "ButtonLeft"))
+            if (GUILayout.Button("å¯¼å…¥", "ButtonLeft"))
             {
-                string presetPath = EditorUtility.OpenFilePanel("Ñ¡ÔñÔ¤ÉèÎÄ¼ş", Application.dataPath, "asset");
+                string presetPath = EditorUtility.OpenFilePanel("é€‰æ‹©é¢„è®¾æ–‡ä»¶", Application.dataPath, "Asset");
                 if (File.Exists(presetPath))
                 {
                     var import = AssetDatabase.LoadAssetAtPath<LanHuView>(presetPath.Replace(Application.dataPath, "Assets"));
@@ -178,33 +202,33 @@ namespace UnityEngine.UI.Tools
                     }
                 }
             }
-            if (GUILayout.Button("Ìí¼Ó", "ButtonMid"))
+            if (GUILayout.Button("æ·»åŠ ", "ButtonMid"))
             {
                 elements.Add(new LanHuViewElement("", "0px", "0px", "1920px", "1080px", "100%", "x1"));
             }
-            if (GUILayout.Button("Çå¿Õ", "ButtonMid"))
+            if (GUILayout.Button("æ¸…ç©º", "ButtonMid"))
             {
-                if (EditorUtility.DisplayDialog("ÌáĞÑ", "È·¶¨É¾³ıµ±Ç°ËùÓĞÅäÖÃĞÅÏ¢?", "È·¶¨", "È¡Ïû"))
+                if (EditorUtility.DisplayDialog("æé†’", "ç¡®å®šåˆ é™¤å½“å‰æ‰€æœ‰é…ç½®ä¿¡æ¯?", "ç¡®å®š", "å–æ¶ˆ"))
                 {
                     elements.Clear();
                     foldoutDic.Clear();
                 }
             }
-            if (GUILayout.Button("Õ¹¿ª", "ButtonMid"))
+            if (GUILayout.Button("å±•å¼€", "ButtonMid"))
             {
                 for (int i = 0; i < elements.Count; i++)
                 {
                     foldoutDic[elements[i]] = true;
                 }
             }
-            if (GUILayout.Button("ÊÕËõ", "ButtonMid"))
+            if (GUILayout.Button("æ”¶ç¼©", "ButtonMid"))
             {
                 for (int i = 0; i < elements.Count; i++)
                 {
                     foldoutDic[elements[i]] = false;
                 }
             }
-            if (GUILayout.Button("Éú³É", "ButtonRight"))
+            if (GUILayout.Button("ç”Ÿæˆ", "ButtonRight"))
             {
                 var array = path.Split('/');
                 var view = new GameObject(array[array.Length - 1]).AddComponent<RectTransform>();
@@ -237,11 +261,11 @@ namespace UnityEngine.UI.Tools
                     }
                     else
                     {
-                        Debug.Log($"<color=yellow>¼ÓÔØÇĞÍ¼Ê§°Ü {spritePath}</color>");
+                        Debug.Log($"<color=yellow>åŠ è½½åˆ‡å›¾å¤±è´¥ {spritePath}</color>");
                     }
                 }
 
-                //´´½¨Ô¤ÉèÎÄ¼ş
+                //åˆ›å»ºé¢„è®¾æ–‡ä»¶
                 var preset = CreateInstance<LanHuView>();
                 for (int i = 0; i < elements.Count; i++)
                 {
@@ -252,11 +276,11 @@ namespace UnityEngine.UI.Tools
                 AssetDatabase.Refresh();
                 Selection.activeObject = preset;
 
-                //´´½¨Prefab
+                //åˆ›å»ºPrefab
                 var prefab = PrefabUtility.SaveAsPrefabAsset(view.gameObject, $"Assets/{view.name}.prefab", out bool result);
                 if (!result)
                 {
-                    Debug.Log($"<color=yellow>Éú³ÉÔ¤ÖÆÌåÊ§°Ü {view.name}</color>");
+                    Debug.Log($"<color=yellow>ç”Ÿæˆé¢„åˆ¶ä½“å¤±è´¥ {view.name}</color>");
                 }
                 else
                 {
@@ -268,7 +292,7 @@ namespace UnityEngine.UI.Tools
 
         private void SetRectTransform(RectTransform rt, float x, float y, float width, float height)
         {
-            //µ÷ÕûÎ»ÖÃ¼°´óĞ¡
+            //è°ƒæ•´ä½ç½®åŠå¤§å°
             rt.anchorMin = new Vector2(0, 1);
             rt.anchorMax = new Vector2(0, 1);
             rt.pivot = Vector2.one * .5f;
@@ -276,7 +300,7 @@ namespace UnityEngine.UI.Tools
             rt.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
             rt.anchoredPosition = new Vector2(x + width / 2f, -(y + height / 2f));
 
-            //µ÷ÕûÍê³Éºó×Ô¶¯ÉèÖÃÃªµã
+            //è°ƒæ•´å®Œæˆåè‡ªåŠ¨è®¾ç½®é”šç‚¹
             RectTransform prt = rt.parent as RectTransform;
             Vector2 anchorMin = new Vector2(
                 rt.anchorMin.x + rt.offsetMin.x / prt.rect.width,

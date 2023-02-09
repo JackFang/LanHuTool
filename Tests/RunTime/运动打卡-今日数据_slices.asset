@@ -21,38 +21,31 @@ MonoBehaviour:
     height: 600px
     opacity: "\r100%\n            100%\r\n          "
     pixel: x1
-  - name: "\u4ECA\u65E5\u6570\u636E"
-    x: 949px
-    y: 369px
-    width: 112px
-    height: 40px
-    opacity: 100%
-    pixel: x1
-  - name: "\u77E9\u5F62"
-    x: 949px
-    y: 435px
-    width: 120px
-    height: 46px
-    opacity: 6%
-    pixel: x1
-  - name: "\u77E9\u5F62"
+  - name: "\u77E9\u5F62(2)"
     x: 1085px
     y: 435px
     width: 120px
     height: 46px
     opacity: 10%
     pixel: x1
-  - name: "\u77E9\u5F62"
+  - name: "\u77E9\u5F62(3)"
     x: 1221px
     y: 435px
     width: 120px
     height: 46px
     opacity: 100%
     pixel: x1
-  - name: "\u77E9\u5F62"
+  - name: "\u77E9\u5F62(4)"
     x: 949px
     y: 505px
     width: 611px
     height: 400px
+    opacity: 100%
+    pixel: x1
+  - name: "\u77E9\u5F62(1)"
+    x: 949px
+    y: 435px
+    width: 120px
+    height: 46px
     opacity: 100%
     pixel: x1
